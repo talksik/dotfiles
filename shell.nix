@@ -15,11 +15,13 @@ pkgs.mkShell {
     pkgs.postgresql
     pkgs.neovim
     pkgs.ripgrep
+    pkgs.packer
     pkgs.nodejs
     pkgs.cmake
     pkgs.rustc
     pkgs.cargo
     pkgs.rustup
+    pkgs.tldr
   ];
 
   shellHook = ''
