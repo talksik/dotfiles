@@ -1,0 +1,12 @@
+*
+
+!.gitignore
+
+!.config
+!.config/nvim
+!.config/nvim/**
+
+!.tmux.conf
+!shell.nix
+!README.md
+!.bashrc
