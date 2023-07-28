@@ -1,7 +1,12 @@
 
 # talksik dotfiles
-## Nix commands
-- `nix-shell` from $HOME to launch shell based on `shell.nix`
+# Clone
+1. `cd $HOME`
+2. `git clone <this_repo> .
+
+## Nix
+1. install nix based on their website
+2. `nix-shell` from $HOME to launch shell based on `shell.nix`
 
 
 ## nvim setup
