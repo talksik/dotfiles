@@ -3,6 +3,7 @@
 pkgs.mkShell {
   buildInputs = [
     pkgs.which
+    pkgs.curl
     pkgs.htop
     pkgs.zlib
     pkgs.git
@@ -22,6 +23,7 @@ pkgs.mkShell {
     pkgs.cargo
     pkgs.rustup
     pkgs.tldr
+    pkgs.meson
   ];
 
   shellHook = ''
