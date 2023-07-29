@@ -1,4 +1,4 @@
-{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/06278c77b5d162e62df170fec307e83f1812d94b.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/9462344318b376e157c94fa60c20a25b913b2381.tar.gz") {} }:
 
 pkgs.mkShell {
   buildInputs = [
@@ -24,6 +24,19 @@ pkgs.mkShell {
     pkgs.rustup
     pkgs.tldr
     pkgs.meson
+    pkgs.protobuf3_20
+    pkgs.protoc-gen-go
+    pkgs.protoc-gen-go-grpc
+    pkgs.sqlc
+    pkgs.go-task
+    pkgs.grpcurl
+    pkgs.gst_all_1.gstreamer
+    pkgs.gst_all_1.gst-plugins-base
+    pkgs.gst_all_1.gst-plugins-good
+    pkgs.gst_all_1.gst-plugins-bad
+    pkgs.gst_all_1.gst-plugins-ugly
+    pkgs.gst_all_1.gst-libav
+    pkgs.gst_all_1.gst-vaapi
   ];
 
   shellHook = ''
