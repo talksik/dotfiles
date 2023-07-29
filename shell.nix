@@ -32,7 +32,11 @@ pkgs.mkShell {
     pkgs.grpcurl
     pkgs.gst_all_1.gstreamer
     pkgs.gst_all_1.gst-plugins-base
-    pkgs.gst_all_1.gst-plugins-good
+    (pkgs.gst_all_1.gst-plugins-good.override {
+      # can only have one of these
+      qt6Support = true;
+      #qt5Support = true;
+    })
     pkgs.gst_all_1.gst-plugins-bad
     pkgs.gst_all_1.gst-plugins-ugly
     pkgs.gst_all_1.gst-libav
