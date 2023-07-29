@@ -13,6 +13,7 @@ pkgs.mkShell {
     pkgs.podman
     pkgs.tmux
     pkgs.go
+    pkgs.clang
     pkgs.postgresql
     pkgs.neovim
     pkgs.ripgrep
@@ -30,6 +31,7 @@ pkgs.mkShell {
     pkgs.sqlc
     pkgs.go-task
     pkgs.grpcurl
+
     pkgs.gst_all_1.gstreamer
     pkgs.gst_all_1.gst-plugins-base
     (pkgs.gst_all_1.gst-plugins-good.override {
@@ -43,6 +45,11 @@ pkgs.mkShell {
     pkgs.gst_all_1.gst-vaapi
 
     pkgs.qt6.full
+    pkgs.mesa
+    pkgs.libGL
+    pkgs.gst_all_1.gstreamermm
+    # output the out and dev
+    pkgs.libxkbcommon # for qt
   ];
 
   shellHook = ''
