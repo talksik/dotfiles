@@ -3,6 +3,7 @@
 # Clone
 1. `cd $HOME`
 2. `git clone <this_repo> .
+See this for problems trying to clone into non-empty directory: https://stackoverflow.com/a/36084134
 
 ## Nix
 1. install nix based on their website
