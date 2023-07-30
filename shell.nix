@@ -59,5 +59,8 @@ pkgs.mkShell {
   '';
 
   MY_ENVIRONMENT_VARIABLE = "world";
+
+  # for runtime linking of libraries
+  #LD_LIBRARY_PATH = "${stdenv.lib.makeLibraryPath buildInputs}:${LD_LIBRARY_PATH}";
 }
 
