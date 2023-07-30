@@ -9,7 +9,6 @@ pkgs.mkShell {
     git
     gh
     curl
-    python39
     podman
     tmux
     go
@@ -44,17 +43,14 @@ pkgs.mkShell {
     gst_all_1.gst-libav
     gst_all_1.gst-vaapi
 
-    qt6.full
-    mesa
-    libGL
-    gst_all_1.gstreamermm
-    libxkbcommon # for qt
-
     fzf
-  ];
 
-  nativeBuildInputs = with pkgs; [
-    pkg-config
+    python311
+    python311Packages.pyside6
+    python311Packages.xapp
+    python311Packages.pip
+    python311Packages.shiboken6
+    qt6.full
   ];
 
   shellHook = ''
@@ -62,8 +58,5 @@ pkgs.mkShell {
   '';
 
   MY_ENVIRONMENT_VARIABLE = "world";
-
-  # for runtime linking of libraries
-  #LD_LIBRARY_PATH = "${stdenv.lib.makeLibraryPath buildInputs}:${LD_LIBRARY_PATH}";
 }
 
