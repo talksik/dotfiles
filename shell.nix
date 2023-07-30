@@ -48,8 +48,10 @@ pkgs.mkShell {
     pkgs.mesa
     pkgs.libGL
     pkgs.gst_all_1.gstreamermm
-    # output the out and dev
     pkgs.libxkbcommon # for qt
+
+
+    pkgs.fzf
   ];
 
   shellHook = ''
