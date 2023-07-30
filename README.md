@@ -14,6 +14,8 @@ See this for problems trying to clone into non-empty directory: https://stackove
 1. run `nix-shell` from $HOME. The `shell.nix` in this repo should have neovim, ripgrep, and packer as dependencies.
 2. open nvim anywhere. `nvim .`
 3. run `:PackerSync`
+ - if this doesn't work, try this to get nvim to load packer: `git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 4. `:q` and then again `nvim .`
 
 #### Details

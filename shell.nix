@@ -14,9 +14,9 @@ pkgs.mkShell {
     go
     clang
     postgresql
-    neovim
-    ripgrep
     packer
+    ripgrep
+    neovim
     nodejs
     cmake
     rustc
@@ -55,6 +55,10 @@ pkgs.mkShell {
 
   shellHook = ''
     echo hello
+    echo "git:  $(git  --version)"
+    echo "htop: $(htop --version)"
+    echo "python: $(python --version)"
+    echo "gstreamer: $(gst-inspect-1.0 --version)"
   '';
 
   MY_ENVIRONMENT_VARIABLE = "world";
