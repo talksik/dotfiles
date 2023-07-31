@@ -44,13 +44,6 @@ pkgs.mkShell {
     gst_all_1.gst-vaapi
 
     fzf
-
-    python311
-    python311Packages.pyside6
-    python311Packages.xapp
-    python311Packages.pip
-    python311Packages.shiboken6
-    qt6.full
   ];
 
   shellHook = ''
