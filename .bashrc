@@ -68,7 +68,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-export PATH=$PATH:~/Qt/5.15.14/gcc_64/bin/:~
+export PATH=$PATH:~/Qt/5.15.14/gcc_64/bin/:~:/usr/local/go/bin:~/go/bin
 export QMAKE=~/Qt/5.15.14/gcc_64/bin
 # needed so that gstreamer building from source can reference Qt installation
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:~/Qt/5.15.14/gcc_64/lib/pkgconfig/
+
+export KUBECONFIG=~/.kube/config
