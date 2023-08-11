@@ -96,6 +96,13 @@ return require('packer').startup(function(use)
 
     use('peterhoeg/vim-qml')
 
-    use('tpope/vim-fugitive')
+    -- nvim v0.7.2
+    use({
+      "kdheepak/lazygit.nvim",
+      -- optional for floating window border decoration
+      requires = {
+        "nvim-lua/plenary.nvim",
+      },
+    })
 end)
 
