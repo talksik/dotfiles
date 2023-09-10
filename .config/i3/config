@@ -194,4 +194,5 @@ exec_always --no-startup-id xrandr --output eDP-1 --off
 exec_always --no-startup-id xrandr --output eDP-1 --left-of DP-1
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id xset r rate 200 30
-
+exec_always --no-startup-id /usr/bin/feh --bg-scale '/home/talksik/wallpaper.jpg'
+exec_always --no-startup-id picom --active-opacity .95 --inactive-opacity .70
