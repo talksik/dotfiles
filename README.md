@@ -1,12 +1,16 @@
 
-# talksik dotfiles
-# Clone
+## Clone
 ```
 cd ~
 git init
 git remote add origin [my-repo]
 git fetch
 git checkout origin/master -ft
+```
+
+## Dependencies
+```
+$ sudo apt install fzf picom feh xclip
 ```
 
 ## Nix
@@ -23,3 +27,4 @@ git checkout origin/master -ft
 
 #### Details
 All plugin related remaps are in their respective files.
+
