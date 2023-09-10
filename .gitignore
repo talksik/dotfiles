@@ -5,8 +5,11 @@
 !.config
 !.config/nvim
 !.config/nvim/**
+!.config/i3
+!.config/i3/**
 
 !.tmux.conf
 !shell.nix
 !README.md
 !.bashrc
+!.Xresources
