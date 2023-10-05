@@ -9,7 +9,7 @@ lsp.ensure_installed({
 -- set client offset encoding for clang
 lsp.configure('clangd', {
   init_options = {
-    offsetEncoding = { "utf-8", "utf-16" }
+    offsetEncoding = { "utf-8" }
   }
 })
 
