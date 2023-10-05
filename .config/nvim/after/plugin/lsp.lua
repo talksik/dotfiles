@@ -6,6 +6,13 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 })
 
+-- set client offset encoding for clang
+lsp.configure('clangd', {
+  init_options = {
+    offsetEncoding = { "utf-8", "utf-16" }
+  }
+})
+
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
   settings = {
