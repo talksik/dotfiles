@@ -10,7 +10,9 @@ lsp.ensure_installed({
 lsp.configure('clangd', {
   init_options = {
     offsetEncoding = { "utf-8" }
-  }
+  },
+  -- ignore protobuf files
+  filetypes = { "c", "cpp", "objc", "objcpp", "hpp" },
 })
 
 -- Fix Undefined global 'vim'

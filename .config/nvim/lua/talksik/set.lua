@@ -32,5 +32,5 @@ vim.leader = " "
 -- case insensitive searching UNLESS /C or capital in searching
 vim.opt.ignorecase = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 

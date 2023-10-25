@@ -194,7 +194,7 @@ bar {
 # exec_always --no-startup-id xrandr --output eDP-1 --left-of DP-1
 exec_always --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id xset r rate 200 30
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/talksik/wallpaper.jpg'
+exec_always --no-startup-id /usr/bin/feh --bg-scale '/home/talksik/wallpaper.jpg'
 exec --no-startup-id picom --active-opacity .95 --inactive-opacity .70
 
 # emoji picker
