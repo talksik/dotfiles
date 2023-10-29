@@ -32,5 +32,9 @@ vim.leader = " "
 -- case insensitive searching UNLESS /C or capital in searching
 vim.opt.ignorecase = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
+
+
+-- don't change cursor on insert mode
+vim.opt.guicursor = ""
 
