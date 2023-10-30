@@ -53,7 +53,6 @@ return require('packer').startup(function(use)
     }
 
     use("f-person/git-blame.nvim")
-    use("wellle/context.vim")
 
     use {
         'numToStr/Comment.nvim',
