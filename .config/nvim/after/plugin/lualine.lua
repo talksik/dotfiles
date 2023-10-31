@@ -1,7 +1,7 @@
-require('lualine').setup {
+require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = 'codedark',
+    theme = 'solarized',
   },
   sections = {
     lualine_a = {
@@ -38,4 +38,4 @@ require('lualine').setup {
       }
     }
   }
-}
+})
