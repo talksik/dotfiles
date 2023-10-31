@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'material',
+    theme = 'codedark',
   },
   sections = {
     lualine_a = {
@@ -19,13 +19,23 @@ require('lualine').setup {
       {
         'diff'
       },
+      {
+        'diagnostics'
+      },
     },
     -- lualine_x = {
     -- },
     -- lualine_y = {
     -- },
     lualine_z = {
-      'filesize'
+      {
+        'datetime',
+        -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+        style = '%H:%M:%S',
+      },
+      {
+        'filesize'
+      }
     }
   }
 }
