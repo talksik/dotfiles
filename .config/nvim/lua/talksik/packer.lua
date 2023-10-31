@@ -67,7 +67,7 @@ return require('packer').startup(function(use)
     use("ThePrimeagen/harpoon")
 
     -- themes
-    use('navarasu/onedark.nvim')
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use('nvim-lua/lsp-status.nvim')
 
