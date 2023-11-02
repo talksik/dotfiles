@@ -68,6 +68,13 @@ return require('packer').startup(function(use)
 
     -- themes
     use('maxmx03/solarized.nvim')
+    use({
+      -- Optional; default configuration will be used if setup isn't called.
+      "neanias/everforest-nvim",
+      config = function()
+        require("everforest").setup()
+      end,
+    })
 
     use('nvim-lua/lsp-status.nvim')
 
