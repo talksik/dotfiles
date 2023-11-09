@@ -68,13 +68,10 @@ return require('packer').startup(function(use)
     use("ThePrimeagen/harpoon")
 
     -- themes
+    use { "catppuccin/nvim", as = "catppuccin" }
     use('maxmx03/solarized.nvim')
     use({
-      -- Optional; default configuration will be used if setup isn't called.
       "neanias/everforest-nvim",
-      config = function()
-        require("everforest").setup()
-      end,
     })
 
     use('nvim-lua/lsp-status.nvim')
