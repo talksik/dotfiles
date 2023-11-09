@@ -208,5 +208,5 @@ gaps inner 10px
 # Outer gaps for all windows: space along the screen edges.
 gaps outer 10px
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shades
 
