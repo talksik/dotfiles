@@ -201,3 +201,12 @@ exec --no-startup-id picom --active-opacity .95 --inactive-opacity .70
 # emoji picker
 bindsym $mod+y exec --no-startup-id "/home/talksik/code/rofi-emoji/emoji.sh"
 
+
+##### GAPS - must have i3 version > 4.22
+# Inner gaps for all windows: space between two adjacent windows (or split containers).
+gaps inner 10px
+# Outer gaps for all windows: space along the screen edges.
+gaps outer 10px
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
