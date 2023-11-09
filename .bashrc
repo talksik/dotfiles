@@ -20,3 +20,8 @@ if [ -f '/home/talksik/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/hom
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/talksik/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/talksik/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# chatgpt
+alias s=tgpt
+
+[ -f ~/.inshellisense/key-bindings.bash ] && source ~/.inshellisense/key-bindings.bash

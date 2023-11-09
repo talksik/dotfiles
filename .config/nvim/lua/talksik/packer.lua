@@ -42,7 +42,8 @@ return require('packer').startup(function(use)
         }
     }
 
-    use("folke/zen-mode.nvim")
+    use {"shortcuts/no-neck-pain.nvim", tag = "*" }
+
     use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
 
