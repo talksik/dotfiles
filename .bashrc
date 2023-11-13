@@ -9,7 +9,7 @@ export HOME=/home/talksik
 export PATH=/usr/local/go/bin:$PATH:~/Qt/5.15.14/gcc_64/bin/:~:~/go/bin:~/code/flutter/bin:$HOME/.local/bin:$HOME/code/flutter-elinux/bin/:$HOME/.pub-cache/bin
 export QMAKE=~/Qt/5.15.14/gcc_64/bin
 # needed so that gstreamer building from source can reference Qt installation
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:~/Qt/5.15.14/gcc_64/lib/pkgconfig/
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:~/Qt/5.15.14/gcc_64/lib/pkgconfig/:/usr/lib/x86_64-linux-gnu/pkgconfig/
 
 export KUBECONFIG=~/.kube/config
 
