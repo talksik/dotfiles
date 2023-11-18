@@ -4,6 +4,7 @@ local lsp_config = require('lspconfig')
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+  dart
 })
 
 -- set client offset encoding for clang
