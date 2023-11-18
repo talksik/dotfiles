@@ -191,7 +191,7 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
-exec_always --no-startup-id xrandr --output eDP-1 --off
+# exec_always --no-startup-id xrandr --output eDP-1 --off
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id xset r rate 200 30
 exec_always --no-startup-id /usr/bin/feh --bg-scale '/home/talksik/wallpaper.jpg'
@@ -203,9 +203,9 @@ bindsym $mod+y exec --no-startup-id "/home/talksik/code/rofi-emoji/emoji.sh"
 
 ##### GAPS - must have i3 version > 4.22
 # Inner gaps for all windows: space between two adjacent windows (or split containers).
-gaps inner 10px
+gaps inner 5px
 # Outer gaps for all windows: space along the screen edges.
-gaps outer 10px
+gaps outer 5px
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shades
 

@@ -5,7 +5,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lg='lazygit'
 
-export HOME=/home/talksik export PATH=/usr/local/go/bin:$PATH:~/Qt/5.15.14/gcc_64/bin/:~:~/go/bin:~/code/flutter/bin:$HOME/.local/bin:$HOME/code/flutter-elinux/bin/:$HOME/.pub-cache/bin:$HOME/.nb
+export HOME=/home/talksik export PATH=/usr/local/go/bin:$PATH:~/Qt/5.15.14/gcc_64/bin/:~:~/go/bin:$HOME/flutter/bin:$HOME/.local/bin:$HOME/code/flutter-elinux/bin/:$HOME/.pub-cache/bin:$HOME/.nb
 
 export QMAKE=~/Qt/5.15.14/gcc_64/bin
 # needed so that gstreamer building from source can reference Qt installation
