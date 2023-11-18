@@ -44,6 +44,8 @@ require('telescope').setup {
   },
 }
 
+require('telescope').load_extension('emoji')
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>sw', builtin.live_grep, {})
@@ -52,3 +54,8 @@ vim.keymap.set('n', '<leader>ss', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>st', builtin.lsp_workspace_symbols, {})
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>s/', builtin.current_buffer_fuzzy_find, {})
+
+-- launch `:Telescope emoji` on pressing `<leader>se`
+vim.keymap.set('n', '<leader>se', function()
+  vim.cmd('Telescope emoji')
+end, {})
