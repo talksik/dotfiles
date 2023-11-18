@@ -22,6 +22,24 @@ if [ -f '/home/talksik/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/hom
 if [ -f '/home/talksik/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/talksik/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
 # chatgpt
-alias s=tgpt
+alias s='tgpt'
 
 [ -f ~/.inshellisense/key-bindings.bash ] && source ~/.inshellisense/key-bindings.bash
+
+shopt nocaseglob # ignore case when matching
+shopt cdspell # fix common spelling mistakes
+shopt -s autocd # for bash
+
+take () {
+    mkdir -p "$1" && cd "$1"
+}
+
+lfcd() {
+    dir=$(lf -print-last-dir "$@")
+    while ! cd "$dir" 2> /dev/null
+    do
+        dir=$(dirname "$dir")
+    done
+}
+
+export NB_EDITOR=nvim
