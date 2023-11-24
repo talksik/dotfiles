@@ -43,3 +43,5 @@ lfcd() {
 }
 
 alias today='$HOME/.nb/today.sh'
+
+shopt -s extglob

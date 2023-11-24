@@ -111,5 +111,8 @@ return require('packer').startup(function(use)
 
     -- version 2.0
     use("lukas-reineke/indent-blankline.nvim")
+
+    use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
 end)
+
 
