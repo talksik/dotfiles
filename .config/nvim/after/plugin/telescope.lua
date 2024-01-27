@@ -54,6 +54,7 @@ vim.keymap.set('n', '<leader>ss', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>st', builtin.lsp_workspace_symbols, {})
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>s/', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<leader>mm', builtin.resume, {})
 
 -- launch `:Telescope emoji` on pressing `<leader>se`
 vim.keymap.set('n', '<leader>se', function()
