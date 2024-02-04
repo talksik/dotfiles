@@ -11,6 +11,9 @@ table.insert(vimgrep_arguments, "--hidden")
 table.insert(vimgrep_arguments, "--glob")
 table.insert(vimgrep_arguments, "!**/.git/*")
 table.insert(vimgrep_arguments, "--no-ignore-parent")
+-- ignore node_modules
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!**/node_modules/*")
 
 require('telescope').setup {
   extensions = {
@@ -25,7 +28,7 @@ require('telescope').setup {
   pickers = {
     find_files = {
       -- hidden = true,
-      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--no-ignore-parent" },
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*", "--no-ignore-parent" },
     },
   },
   defaults = {
