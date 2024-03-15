@@ -113,6 +113,9 @@ return require('packer').startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
 
     use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+
+    -- treesitter context
+    use("nvim-treesitter/nvim-treesitter-context")
 end)
 
 
