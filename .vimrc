@@ -23,6 +23,7 @@ set nowritebackup
 
 set hlsearch
 set incsearch
+set ignorecase
 
 " Mappings
 nnoremap <C-p> :GFiles<CR>
