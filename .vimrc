@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Use ripgrep to list files (fast, respects .gitignore)
@@ -9,12 +10,16 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
 
 let mapleader = " "
 
-set autochdir
+" set autochdir
 
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+set number relativenumber
+
+set signcolumn=yes
 
 set noswapfile
 set noundofile
@@ -25,7 +30,9 @@ set hlsearch
 set incsearch
 set ignorecase
 
+set tags=./tags;,tags
+
 " Mappings
-nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>r :Rg<CR>
+nnoremap <leader>g :Rg<CR>
