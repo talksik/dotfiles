@@ -3,6 +3,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Use ripgrep to list files (fast, respects .gitignore)
@@ -31,6 +32,8 @@ set incsearch
 set ignorecase
 
 set tags=./tags;,tags
+
+colorscheme habamax
 
 " Mappings
 nnoremap <leader>f :Files<CR>
