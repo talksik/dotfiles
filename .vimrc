@@ -35,6 +35,9 @@ set tags=./tags;,tags
 
 colorscheme habamax
 
+" Read changes to files on disk automatically without needing to reload
+set autoread
+
 " Mappings
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
