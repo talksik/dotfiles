@@ -1,15 +1,13 @@
 call plug#begin()
 Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
-" Use ripgrep to list files (fast, respects .gitignore)
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
-
 let mapleader = " "
+
+let g:fzf_layout = { 'down': '40%' }
 
 " set autochdir
 
@@ -39,6 +37,15 @@ colorscheme habamax
 set autoread
 
 " Mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
+nnoremap <silent> <leader>f :FZF<CR>
+
+" ripgrep as the grep engine
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+  set grepformat=%f:%l:%c:%m
+endif
+
+" :Rg pattern  -> search, drop results in quickfix at the bottom, no auto-jump
+command! -nargs=+ Rg execute 'silent grep! ' . <q-args> | botright cwindow
+
+nnoremap <leader>g :Rg 
