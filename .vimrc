@@ -38,6 +38,7 @@ set autoread
 
 " Mappings
 nnoremap <silent> <leader>f :FZF<CR>
+nnoremap <leader> <leader>e :Explore<CR>
 
 " ripgrep as the grep engine
 if executable('rg')
