@@ -1,6 +1,11 @@
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(load-theme 'leuven-dark t)
+(load-theme 'leuven t)
 (scroll-bar-mode -1)
 
 (setq display-line-numbers-type 'visual)
@@ -14,16 +19,9 @@
 (global-auto-revert-mode 1)
 
 (setq treesit-language-source-alist
-      '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-        (tsx        "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")))
-
-(setq treesit-language-source-alist
-      '((mach "https://github.com/octalide/mach-tree-sitter")))
-
-(add-to-list 'auto-mode-alist '("\\.mach\\'" . mach-ts-mode))
-
-(setq treesit-language-source-alist
  '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+   (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+   (tsx        "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
    (cmake "https://github.com/uyha/tree-sitter-cmake")
    (css "https://github.com/tree-sitter/tree-sitter-css")
    (elisp "https://github.com/Wilfred/tree-sitter-elisp")
@@ -41,16 +39,25 @@
    (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
    (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
-(setq explicit-shell-file-name "powershell.exe")
-(setq explicit-powershell.exe-args '("-ExecutionPolicy" "Bypass" "-NoInteractive"))
-
 (add-to-list 'auto-mode-alist '("\\.ts\\'"  . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
-(setq find-program "C:/msys64/usr/bin/find.exe"
-      grep-program "C:/msys64/usr/bin/grep.exe")
+(unless (package-installed-p 'dart-mode)
+  (package-refresh-contents)
+  (package-install 'dart-mode))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files '("/Users/talksik/Dropbox/Notes/notes.org"))
+ '(package-selected-packages '(dart-mode projectile)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
-(setq explicit-shell-file-name "powershell.exe")
-;; Remove default arguments that cause startup failures in Emacs buffers
-(setq explicit-powershell.exe-args '())
+(setq project-vc-extra-root-markers '(".project"))
