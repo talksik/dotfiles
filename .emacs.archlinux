@@ -1,0 +1,139 @@
+;; -*- lexical-binding: t; -*-
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
+
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(load-theme 'leuven-dark t)
+(scroll-bar-mode -1)
+
+(unless (package-installed-p 'evil)
+  (package-refresh-contents)
+  (package-install 'evil))
+(require 'evil)
+(evil-mode 0)
+
+(setq display-line-numbers-type 'visual)
+(global-display-line-numbers-mode 1)
+
+(set-face-attribute 'default nil :height 150)
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-o") 'other-window)
+
+(global-auto-revert-mode 1)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(create-lockfiles nil)
+ '(org-agenda-files '("~/Documents/org/inbox.org"))
+ '(package-selected-packages
+   '(dart-mode evil magit markdown-mode org-download org-modern org-roam)))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(setq project-vc-extra-root-markers '(".project"))
+
+(require 'notmuch)
+
+(setq sendmail-program "msmtp"
+      message-send-mail-function 'message-send-mail-with-sendmail
+      mail-speciy-envelope-from t
+      message-sendmail-envelope-from 'header
+      mail-envelope-from 'header)
+
+(setq notmuch-fcc-dirs "Proton/Sent +sent")
+
+(keymap-global-set "C-c n m" 'notmuch)
+
+(global-set-key (kbd "C-c n r")
+                (lambda ()
+                  (interactive)
+                  (async-shell-command "mbsync -a && notmuch new")))
+
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/Documents/org/roam")
+  (org-roam-completion-everywhere t)
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)
+         :map org-mode-map
+         ("C-M-i" . completion-at-point))
+  :config
+  (org-roam-setup))
+
+;; fix for allowing typing spaces in org-roam-node-find node title prompt
+(define-key minibuffer-local-completion-map (kbd "SPC") 'self-insert-command)
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "RUNNING(g)" "BLOCKED(b)" "|" "DONE(d)" "CANCELED(c)")))
+
+(setq org-startup-with-link-previews -1)
+(setq org-startup-indented t)
+
+(require 'org-download)
+
+(global-set-key (kbd "C-c e") #'eww)
+
+(global-set-key (kbd "C-c o a") #'org-agenda)
+(setq org-agenda-custom-commands
+      '(("i" "Inbox"
+         ((tags-todo "+research"
+                     ((org-agenda-overriding-header "R&D")))
+          (tags-todo "+consulting"
+                     ((org-agenda-overriding-header "Consulting")))
+          (tags-todo "+admin"
+                     ((org-agenda-overriding-header "Admin")))
+          (tags-todo "+operations"
+                     ((org-agenda-overriding-header "Operations")))
+          (tags-todo "-{.*}"
+                     ((org-agenda-overriding-header "Untagged Tasks")))
+          (todo ".*"
+                ((org-agenda-files '("~/Documents/org/inbox.org"))
+                 (org-agenda-overriding-header "Unprocessed Inbox Items"))))
+         ;; Apply prefix format and sorting once for ALL blocks in "i"
+         ((org-agenda-prefix-format '((tags . "  %-12:c %?-12t %s ")
+                                      (todo . "  %-12:c %?-12t %s ")))
+          (org-agenda-sorting-strategy '(deadline-up priority-down))))
+
+        ("d" "Daily Agenda"
+         ((agenda "" ((org-agenda-span 'day)
+                      (org-deadline-warning-days 7)))
+          (tags-todo "+PRIORITY=\"A\""
+                     ((org-agenda-overriding-header "High Priority Tasks")
+                      (org-agenda-prefix-format "  %-12:c %?-12t %s ")))))
+
+        ("w" "Weekly Review"
+         ((agenda ""
+                  ((org-agenda-overriding-header "Completed Tasks")
+                   (org-agenda-skip-function '(org-agenda-skip-entry-if 'nottodo 'done))
+                   (org-agenda-span 'week)))
+          (agenda ""
+                  ((org-agenda-overriding-header "Unfinished Scheduled Tasks")
+                   (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                   (org-agenda-span 'week)))))))
+
+
+(add-hook 'message-mode-hook
+          (lambda ()
+            (auto-fill-mode -1)
+            (visual-line-mode 1)))
+
+(add-hook 'org-mode-hook #'visual-line-mode)
+
+(setq org-agenda-start-on-weekday 0)
+(setq calendar-week-start-day 0)
